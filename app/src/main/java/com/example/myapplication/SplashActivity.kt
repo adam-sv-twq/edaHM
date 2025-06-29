@@ -7,6 +7,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import android.os.Looper
+
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +20,8 @@ class SplashActivity : AppCompatActivity() {
             val intent = Intent(this@SplashActivity, StartActivity::class.java)
             startActivity(intent) // Исправлено: используйте startActivity вместо StartActivity
             finish()
-        }, 2000)
+        }, 3000)
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
