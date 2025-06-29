@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/adlam_display</item>
+        <item>@font/akaya_kanadaka</item>
+        <item>@font/monoton</item>
+        <item>@font/roboto_black</item>
+        <item>@font/roboto_serif_extrabold_italic</item>
+    </array>
+</resources>
