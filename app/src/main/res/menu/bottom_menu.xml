@@ -26,7 +26,7 @@
         />
 
     <item
-        android:id="@+id/profila"
+        android:id="@+id/profile"
         android:title=""
         android:icon="@drawable/menu_user"
         />

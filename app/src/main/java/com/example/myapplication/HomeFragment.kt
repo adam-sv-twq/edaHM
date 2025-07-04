@@ -7,11 +7,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.Adapters.ImageSliderAdapter
+import com.example.myapplication.Adapters.PopularAdapter
+import com.example.myapplication.Models.PopularModel
 import kotlinx.coroutines.Runnable
 
 
@@ -21,6 +25,12 @@ private lateinit var viewPager2: ViewPager2
 private lateinit var adapter: ImageSliderAdapter
 private lateinit var imageList: ArrayList<Int>
 private lateinit var handler: Handler
+
+private lateinit var popularAdapter: PopularAdapter
+private lateinit var listPopular : ArrayList<PopularModel>
+private lateinit var homeRv : RecyclerView
+
+private lateinit var goMenuText : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +45,42 @@ private lateinit var handler: Handler
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         viewPager2 = view.findViewById(R.id.imageSlider)
+
+
+        homeRv = view.findViewById(R.id.home_RV)
+        goMenuText = view.findViewById(R.id.go_menu)
+
+        goMenuText.setOnClickListener {
+            val bottomSheetMenu = MenuBottomSheerFragment()
+            bottomSheetMenu.show(parentFragmentManager, "Test")
+        }
+
+        listPopular = ArrayList()
+        listPopular.add(PopularModel(R.drawable.shaurma, "Шаурма Мини", "129₽"))
+        listPopular.add(PopularModel(R.drawable.shaurma, "Шаурма Классика", "229₽"))
+        listPopular.add(PopularModel(R.drawable.shaurma, "Шаурма Гигант", "299₽"))
+        listPopular.add(PopularModel(R.drawable.shaurma, "Шаурма", "299"))
+        listPopular.add(PopularModel(R.drawable.shaurma, "Чебурек", "249"))
+        listPopular.add(PopularModel(R.drawable.shaurma, "Бургер", "199"))
+        listPopular.add(PopularModel(R.drawable.shaurma, "Шаурма", "299"))
+        listPopular.add(PopularModel(R.drawable.shaurma, "Чебурек", "249"))
+        listPopular.add(PopularModel(R.drawable.shaurma, "Бургер", "199"))
+        listPopular.add(PopularModel(R.drawable.shaurma, "Шаурма", "299"))
+        listPopular.add(PopularModel(R.drawable.shaurma, "Чебурек", "249"))
+        listPopular.add(PopularModel(R.drawable.shaurma, "Бургер", "199"))
+
+
+
+        popularAdapter = PopularAdapter(requireContext(), listPopular)
+
+        homeRv.layoutManager = LinearLayoutManager(requireContext())
+        homeRv.adapter = popularAdapter
+
+
+
+
+
+
         return view
     }
 

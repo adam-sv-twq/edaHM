@@ -1,26 +1,32 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import android.os.Handler  // Добавьте этот импорт
-import android.content.Intent  // Добавьте этот импорт
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import android.os.Looper
+import com.example.myapplication.databinding.ActivityDetailsBinding
 
-
-class SplashActivity : AppCompatActivity() {
+class DetailsActivity : AppCompatActivity() {
+    private lateinit var binding : ActivityDetailsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityDetailsBinding.inflate(layoutInflater)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_splash)
+        setContentView(binding.root)
 
-        Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this@SplashActivity, StartActivity::class.java)
-            startActivity(intent) // Исправлено: используйте startActivity вместо StartActivity
+        val foodImage = intent.getIntExtra("foodImage", 0)
+        val foodName = intent.getStringExtra("foodName")
+
+        binding.menuDFoodImage.setImageResource(foodImage)
+        binding.menuDFoodName.text = foodName
+
+        binding.backHome.setOnClickListener {
             finish()
-        }, 3000)
+        }
+
+
+
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
