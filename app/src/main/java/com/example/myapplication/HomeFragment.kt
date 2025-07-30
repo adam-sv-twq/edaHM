@@ -21,16 +21,16 @@ import kotlinx.coroutines.Runnable
 
 class HomeFragment : Fragment() {
 
-private lateinit var viewPager2: ViewPager2
-private lateinit var adapter: ImageSliderAdapter
-private lateinit var imageList: ArrayList<Int>
-private lateinit var handler: Handler
+    private lateinit var viewPager2: ViewPager2
+    private lateinit var adapter: ImageSliderAdapter
+    private lateinit var imageList: ArrayList<Int>
+    private lateinit var handler: Handler
 
-private lateinit var popularAdapter: PopularAdapter
-private lateinit var listPopular : ArrayList<PopularModel>
-private lateinit var homeRv : RecyclerView
+    private lateinit var popularAdapter: PopularAdapter
+    private lateinit var listPopular : ArrayList<PopularModel>
+    private lateinit var homeRv : RecyclerView
 
-private lateinit var goMenuText : TextView
+    private lateinit var goMenuText : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,15 +59,15 @@ private lateinit var goMenuText : TextView
         listPopular.add(PopularModel(R.drawable.shaurma, "Шаурма Мини", "129₽"))
         listPopular.add(PopularModel(R.drawable.shaurma, "Шаурма Классика", "229₽"))
         listPopular.add(PopularModel(R.drawable.shaurma, "Шаурма Гигант", "299₽"))
-        listPopular.add(PopularModel(R.drawable.shaurma, "Шаурма", "299"))
-        listPopular.add(PopularModel(R.drawable.shaurma, "Чебурек", "249"))
-        listPopular.add(PopularModel(R.drawable.shaurma, "Бургер", "199"))
-        listPopular.add(PopularModel(R.drawable.shaurma, "Шаурма", "299"))
-        listPopular.add(PopularModel(R.drawable.shaurma, "Чебурек", "249"))
-        listPopular.add(PopularModel(R.drawable.shaurma, "Бургер", "199"))
-        listPopular.add(PopularModel(R.drawable.shaurma, "Шаурма", "299"))
-        listPopular.add(PopularModel(R.drawable.shaurma, "Чебурек", "249"))
-        listPopular.add(PopularModel(R.drawable.shaurma, "Бургер", "199"))
+        listPopular.add(PopularModel(R.drawable.shaurma, "Мини-стрипсы", "99₽"))
+        listPopular.add(PopularModel(R.drawable.shaurma, "Кесадилья курочка под сыром", "179₽"))
+        listPopular.add(PopularModel(R.drawable.shaurma, "Бургер Говядина", "249₽"))
+        listPopular.add(PopularModel(R.drawable.shaurma, "Бургер с куриными стрипсами", "189"))
+        listPopular.add(PopularModel(R.drawable.shaurma, "Бургер с куриной котлетой", "229"))
+        listPopular.add(PopularModel(R.drawable.shaurma, "Хот-дог говядина", "199"))
+        listPopular.add(PopularModel(R.drawable.shaurma, "Хот-дог курица", "299"))
+        listPopular.add(PopularModel(R.drawable.shaurma, "Хот-дог докторский", "249"))
+        listPopular.add(PopularModel(R.drawable.shaurma, "френч-дог говядина", "199"))
 
 
 
